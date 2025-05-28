@@ -18,7 +18,6 @@ from fast import app
 
 # ----------------------------------------------------------------------
 # Конфигурация тестовой базы данных для FAST API сервера
-
 @pytest_asyncio.fixture(scope="session", autouse=True)
 async def async_engine() -> AsyncGenerator[AsyncEngine, None]:
     yield create_async_engine(ASYNC_DATABASE_TEST_URL, echo=False, future=True)
